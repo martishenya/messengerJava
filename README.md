@@ -10,16 +10,20 @@ Además, estas entidades permiten ampliar fácilmente la funcionalidad del proye
 
 cada entidad con más de detalle
 
-[USER]
+### [USER]
 La entidad User puede contener información básica del usuario, por ejemplo id, nombre, estado y fecha de registro. También se le pueden añadir funciones como cambiar el nombre, bloquear a otro usuario o consultar sus chats
-[MENSAJE]
+
+
+### [MENSAJE]
 La entidad Mensaje puede contener el texto del mensaje y diferentes metadatos, como id, fecha/hora, usuario que lo ha enviado y chat al que pertenece. También podemos añadir características como saber si el mensaje ha sido leído, editado o eliminado
-[CHAT]
+
+
+### [CHAT]
 El Chat contendrá el id, los usuarios participantes y la lista de mensajes. En el caso de los grupos también se puede guardar el nombre del grupo o los administradores. Entre sus funciones pueden estar enviar mensajes, añadir o eliminar usuarios y mostrar el historial de la conversación
 Hemos elegido este proyecto en primer lugar por su flexibilidad, ya que una aplicación de mensajería puede desarrollarse de muchas formas diferentes. Podemos empezar con una versión muy sencilla y educativa, e ir ampliándola poco a poco hasta convertirla en un proyecto personal más completo, profundizando en conceptos y herramientas más avanzadas
 
 ## Casos de uso
--  Usuarios
+### Usuarios
 
   - [ ] Crear usuario
 
@@ -35,7 +39,7 @@ Hemos elegido este proyecto en primer lugar por su flexibilidad, ya que una apli
 
   - [ ] Bloquear y desbloquear usuarios
 
--  Chats y grupos
+### Chats y grupos
 
   - [ ] Crear chat para dos usuarios
 
@@ -53,7 +57,7 @@ Hemos elegido este proyecto en primer lugar por su flexibilidad, ya que una apli
 
 - [ ] Crear administradores de grupo
 
-- Mensajes
+### Mensajes
 
 - [ ] Enviar mensajes
 
