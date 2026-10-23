@@ -1,5 +1,5 @@
 # messengerJava
-Proyecto de mensajería en Java desarrollado para la asignatura de Programación en UPSA, aplicando conceptos de Programación Orientada a Objetos 
+Proyecto de mensajería en Java desarrollado para la asignatura de Programación en UPSA, aplicando conceptos de Programación Orientada a Objetos
 
 ## Descripción del Proyecto
 
@@ -76,3 +76,8 @@ Hemos elegido este proyecto en primer lugar por su flexibilidad, ya que una apli
 - Usabilidad - como una aplicación de mensajería no está dirigida a un tipo específico de usuario, es importante crear una interfaz clara y fácil de entender para cualquier persona
 - Seguridad - una aplicación de mensajería puede manejar mucha información personal, por lo que es importante proteger los datos
 
+
+## Equipo de Desarrollo:
+- Maksim Martishenia
+- Arjun Penkar
+- Carla Zhu Martín Sánchez
