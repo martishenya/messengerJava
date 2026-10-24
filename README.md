@@ -71,6 +71,9 @@ Hemos elegido este proyecto en primer lugar por su flexibilidad, ya que una apli
 
 - [ ] Filtrar mensajes por fecha
 
+<img width="1072" height="678" alt="mensajeriaDiagramaFoto" src="https://github.com/user-attachments/assets/c9a6ba34-92c2-4894-a374-e28671a71062" />
+
+
 ## Requisitos No Funcionales
 - Rendimiento - la parte más importante de cualquier mensajeria
 - Usabilidad - como una aplicación de mensajería no está dirigida a un tipo específico de usuario, es importante crear una interfaz clara y fácil de entender para cualquier persona
