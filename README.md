@@ -71,7 +71,8 @@ Hemos elegido este proyecto en primer lugar por su flexibilidad, ya que una apli
 
 - [ ] Filtrar mensajes por fecha
 
-<img width="1422" height="613" alt="mensajeriaDiagrama" src="https://github.com/user-attachments/assets/3ea530eb-bc7e-4eb8-b345-81948989639f" />
+<img width="1507" height="626" alt="mensajeriaDiagrama (1)" src="https://github.com/user-attachments/assets/5c8006b4-918c-41b3-bd4b-042977d85664" />
+
 
 
 ## Requisitos No Funcionales
