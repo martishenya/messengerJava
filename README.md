@@ -25,23 +25,23 @@ Hemos elegido este proyecto en primer lugar por su flexibilidad, ya que una apli
 ## Casos de uso
 ### Usuarios
 
-  - [ ] Crear usuario
+  - [x] Crear usuario
 
-  - [ ] Iniciar sesión como usuario
+  - [x] Iniciar sesión como usuario
 
-  - [ ] Cerrar sesión
+  - [x] Cerrar sesión
 
   - [ ] Eliminar usuario
 
   - [ ] Modificar el nombre del usuario
 
-  - [ ] Mostrar los usuarios registrados
+  - [x] Mostrar los usuarios registrados
 
   - [ ] Bloquear y desbloquear usuarios
 
 ### Chats y grupos
 
-  - [ ] Crear chat para dos usuarios
+  - [x] Crear chat para dos usuarios
 
   - [ ] Crear grupo
 
@@ -51,15 +51,15 @@ Hemos elegido este proyecto en primer lugar por su flexibilidad, ya que una apli
 
 - [ ] Eliminar usuarios de un grupo
 
-- [ ] Modificar el nombre de un chat o grupo
+- [ ] Modificar el nombre de un grupo
 
-- [ ] Mostrar la lista de chats de un usuario
+- [x] Mostrar la lista de chats del usuario de la sesion
 
 - [ ] Crear administradores de grupo
 
 ### Mensajes
 
-- [ ] Enviar mensajes
+- [x] Enviar mensajes
 
 - [ ] Editar mensajes
 
