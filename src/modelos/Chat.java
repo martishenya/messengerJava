@@ -3,7 +3,6 @@ package modelos;
 import java.util.ArrayList;
 
 public abstract class Chat {
-
     private int id;
     private ArrayList<Usuario> participantes;
     private ArrayList<Mensaje> mensajes;

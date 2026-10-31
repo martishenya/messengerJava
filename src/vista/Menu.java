@@ -1,6 +1,7 @@
 package vista;
 
 import modelos.*;
+import servicio.Builder;
 import servicio.GestorMensajeria;
 import servicio.Sesion;
 
@@ -23,6 +24,8 @@ public class Menu {
         mensajeria = new GestorMensajeria();
 
         sesion = new Sesion();
+
+        Builder.datosEjemplo(mensajeria);
 
     }
 

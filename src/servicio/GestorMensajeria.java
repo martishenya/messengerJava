@@ -14,19 +14,6 @@ public class GestorMensajeria {
         chats = new ArrayList<>();
     }
 
-    public Usuario buscarUsuario(String username){
-
-        for(Usuario u : usuarios){
-
-            if(u.getUsername().equalsIgnoreCase(username)){
-                return u;
-            }
-
-        }
-
-        return null;
-
-    }
 
     public int crearUsuario( String nombre, String apellido, String username, String contrasena){
 
@@ -50,6 +37,22 @@ public class GestorMensajeria {
 //        teniendo en cuenta que tenemos las comprobaciones en la parte de menu
 //        asi separamos la logica de ui y logica interna del prorgama
     }
+
+    public Usuario buscarUsuario(String username){
+
+        for(Usuario u : usuarios){
+
+            if(u.getUsername().equalsIgnoreCase(username)){
+                return u;
+            }
+
+        }
+
+        return null;
+
+    }
+
+
 
     public int eliminarUsuario(String username){
 
@@ -140,6 +143,7 @@ public class GestorMensajeria {
     private boolean existeChatPrivado(Usuario usuario1, Usuario usuario2){
 
         return buscarChatPrivado(usuario1, usuario2) != null;
+
     }
 
     public void enviarMensaje(Chat chat, Usuario remitente, String texto){
