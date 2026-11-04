@@ -33,7 +33,7 @@ public class GestorMensajeria {
 
         }
 
-//        para ahora estos codigos de error no sirven en practica pero lo dejamos por seguridad de la lógica
+//        para ahora casi todos estos codigos de error no sirven en practica pero lo dejamos por seguridad de la lógica
 //        teniendo en cuenta que tenemos las comprobaciones en la parte de menu
 //        asi separamos la logica de ui y logica interna del prorgama
     }
@@ -52,11 +52,33 @@ public class GestorMensajeria {
 
     }
 
+    public int modificarContrasena(Usuario usuario, String contrasenaNueva, String contrasenaActual){
 
 
-    public int eliminarUsuario(String username){
+        if (usuario == null){
 
-        Usuario usuario = buscarUsuario(username);
+            return -2;
+//            ERROR: no existe el usuario con el username introducido que hay que modificar
+
+        }
+
+        if(!usuario.getContrasena().equals(contrasenaActual)){
+
+            return -5;
+//            ERROR: contrasena introducida no coincide con la contrasena actual
+
+        }
+
+        usuario.setContrasena(contrasenaNueva);
+
+       return 0;
+
+        }
+
+
+    public int eliminarUsuario(Usuario usuario){
+
+//        Usuario usuario = buscarUsuario(username);
 
         if(usuario != null){
 
@@ -132,9 +154,7 @@ public class GestorMensajeria {
 
             }
 
-
         }
-
 
         return null;
     }

@@ -19,14 +19,14 @@ public class ChatGrupo extends Chat{
     }
 
 
-//    поменять потом в гитхабе в списке кейсов что можно добавить участника или участников в группу
-//    не только одного в смысле
+
     public int anadirParticipantes(ArrayList<Usuario> usuarios){
 
         for(Usuario u : usuarios){
 
             anadirParticipante(u);
-//нюанс что может попасть создатель группы в список -- поправить потом
+
+            //podemos ahora tener el creador en la lista
         }
 
         return 0;

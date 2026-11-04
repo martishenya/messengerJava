@@ -38,6 +38,10 @@ public class Usuario {
         return contrasena;
     }
 
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
     public String getApellido() {
         return apellido;
     }

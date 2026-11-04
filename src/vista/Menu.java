@@ -5,7 +5,6 @@ import servicio.Builder;
 import servicio.GestorMensajeria;
 import servicio.Sesion;
 
-import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -79,7 +78,7 @@ public class Menu {
         System.out.println("1. Crear chat privado");
         System.out.println("2. Crear grupo");
         System.out.println("3. Mis chats");
-        System.out.println("4. Ajustes(redactar el perfil/ redactar tus grupos");
+        System.out.println("4. Ajustes");
         System.out.println("0. Cerrar sesion");
 
         opc = sc.nextInt();
@@ -97,7 +96,7 @@ public class Menu {
                 misChats();
                 break;
             case 4:
-
+                ajustes();
                 break;
             case 0:
                 sesion.cerrarSesion();
@@ -143,6 +142,8 @@ public class Menu {
 
             System.out.println("El username introducido ya existe");
             System.out.println("Probar otra vez?[y/n] ");
+
+            // next() en el lugar de nextLine() para evitar error si el usuario introduce una línea vacía
             opc = sc.next().charAt(0);
             sc.nextLine();
 
@@ -450,6 +451,60 @@ public class Menu {
             System.out.printf("%s (%s %s)%n", u.getUsername(), u.getNombre(), u.getApellido());
 
         }
+
+    }
+
+    private void ajustes(){
+
+        int opc;
+        Usuario usuarioActivo = sesion.getUsuarioActivo();
+
+        System.out.println("Elige la accion:");
+        System.out.println("1. Eliminar el perfil actual");
+        System.out.println("2. Cambiar la contrasena");
+//        System.out.println("0. Volver");
+
+        opc = sc.nextInt();
+        sc.nextLine();
+
+        switch (opc){
+
+            case 1:
+                mensajeria.eliminarUsuario(usuarioActivo);
+                sesion.cerrarSesion();
+                break;
+
+            case 2:
+                String contrasenaAct, contrasenaNuev;
+                int check;
+
+                System.out.println("Introduce la contrasena actual:");
+                contrasenaAct = sc.nextLine();
+                System.out.println("Introduce la contrasena nueva:");
+                contrasenaNuev = sc.nextLine();
+
+                check = mensajeria.modificarContrasena(usuarioActivo,contrasenaNuev,contrasenaAct);
+                if(check == -5){
+
+                    System.out.println("La contrasena actual introducida es incorrecta");
+                    pararProg();
+                    return;
+                }else{
+
+                    System.out.println("La contrasena fue actualizada correctamente");
+                    pararProg();
+                    return;
+
+                }
+
+
+            default:
+
+
+
+        }
+
+
 
     }
 
