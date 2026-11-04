@@ -31,9 +31,9 @@ Hemos elegido este proyecto en primer lugar por su flexibilidad, ya que una apli
 
   - [x] Cerrar sesión
 
-  - [ ] Eliminar usuario
+  - [x] Eliminar usuario
 
-  - [ ] Modificar el nombre del usuario
+  - [x] Modificar la contrasena del usuario
 
   - [x] Mostrar los usuarios registrados
 
