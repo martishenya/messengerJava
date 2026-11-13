@@ -10,7 +10,6 @@ public class Main {
 
         menu.iniciarMensajeria();
 
-
     }
 
 }

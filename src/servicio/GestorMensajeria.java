@@ -83,7 +83,7 @@ public class GestorMensajeria {
         if(usuario != null){
 
             usuarios.remove(usuario);
-//            потом можно/нужно еще удалять приватные чаты с удаленным пользователем
+
             return 0;
         }else{
 
