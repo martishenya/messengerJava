@@ -9,24 +9,25 @@ public class ChatGrupo extends Chat{
 //    private ArrayList<Usuario> admins;
 
 
-    public ChatGrupo(int id, String nombre, Usuario usuarioCreador) {
+    public ChatGrupo(int id, String nombre, Usuario usuarioCreador, ArrayList<Usuario> usuarios) {
         super(id);
         this.nombre = nombre;
         this.usuarioCreador = usuarioCreador;
         anadirParticipante(usuarioCreador);
 
+        anadirParticipantes(usuarios);
 
     }
 
 
 
+    //    garantizamos que no se puede anadir el creador en la lista por las comprobaciones que estan fuera
     public int anadirParticipantes(ArrayList<Usuario> usuarios){
 
         for(Usuario u : usuarios){
 
             anadirParticipante(u);
 
-            //podemos ahora tener el creador en la lista
         }
 
         return 0;

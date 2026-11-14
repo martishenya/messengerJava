@@ -94,7 +94,7 @@ public class Menu {
                 menuChat.crearChatPrivado();
                 break;
             case 2:
-//                crearChatGrupo();
+                menuChat.crearChatGrupo();
                 break;
             case 3:
                 menuChat.misChats();

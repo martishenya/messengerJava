@@ -24,17 +24,21 @@ public class MenuChat {
         int check;
         int opcUsuario;
         Usuario usuario;
-        ArrayList<Usuario> listaUsuarios;
+        ArrayList<Usuario> listaUsuarios = mensajeria.getUsuarios();
+
+        listaUsuarios.remove(sesion.getUsuarioActivo());
 
 //        limpiarConsola();
         System.out.println("Elige la persona con quien quieres empezar a chatear y introduce el numero correspondiente:");
-
-        listaUsuarios = mostrarAndGetListaUsuarios();
 
         if(listaUsuarios.isEmpty()){
             System.out.println("No hay usuarios en el sistema");
             return;
         }
+
+        mostrarListaUsuarios(listaUsuarios);
+
+
 
 
         do{
@@ -73,14 +77,57 @@ public class MenuChat {
 
         String nombre;
 
+        int i = 1;
+
+        int opcUsuario;
+
+        Usuario usuarioActivo = sesion.getUsuarioActivo();
+
+        ArrayList<Usuario> usuariosAAnadir  = new ArrayList<>();
+        ArrayList<Usuario> usuariosDisponibles = mensajeria.getUsuarios();
+
+        usuariosDisponibles.remove(usuarioActivo);
 
         System.out.println("Introduce el nombre para el grupo nuevo:");
         nombre = sc.nextLine();
 
 
 
-//        mostrarListaUsuarios();
+        do{
+            System.out.printf("Elige la persona num: %d para anadir al grupo y introduce el numero correspondiente:%n", i);
+            mostrarListaUsuarios(usuariosDisponibles);
 
+            opcUsuario = sc.nextInt();
+            sc.nextLine();
+
+            if(opcUsuario < 1 || opcUsuario > usuariosDisponibles.size()){
+
+                System.out.println("El valor introducido no es valido, elige otra vez! ");
+
+
+            }else {
+                Usuario usuario = usuariosDisponibles.remove(opcUsuario - 1);
+                usuariosAAnadir.add(usuario);
+
+                System.out.println("Seguir anadiendo?[y/n] ");
+
+                char opc = sc.next().charAt(0);
+                sc.nextLine();
+
+//              cualquier char exepto 'y' va al siguiente paso: crearGrupo ya
+                if(opc != 'y'){
+
+                    break;
+                }
+
+            }
+
+            i++;
+
+        }while(true);
+
+        Chat chat = mensajeria.crearChatGrupo(nombre, usuariosAAnadir, usuarioActivo);
+        abrirChat(chat);
     }
 
     public void misChats(){
@@ -230,11 +277,10 @@ public class MenuChat {
     }
 
 
-    private ArrayList<Usuario> mostrarAndGetListaUsuarios(){
-        ArrayList<Usuario> usuarios = mensajeria.getUsuarios();
+    private void mostrarListaUsuarios(ArrayList<Usuario> usuarios){
+//        ArrayList<Usuario> usuarios = mensajeria.getUsuarios();
         Usuario usuarioActivo = sesion.getUsuarioActivo();
 
-        usuarios.remove(usuarioActivo);
 
         int i = 0;
 
@@ -245,6 +291,5 @@ public class MenuChat {
 
         }
 
-        return usuarios;
     }
 }

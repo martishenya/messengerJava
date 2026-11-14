@@ -117,13 +117,14 @@ public class GestorMensajeria {
 
     }
 
-    public int crearChatGrupo(ArrayList<Usuario> listUsuarios){
+    public Chat crearChatGrupo(String nombre, ArrayList<Usuario> listUsuarios, Usuario usuarioCreador){
 
+        ChatGrupo chatGrupo = new ChatGrupo(0, nombre, usuarioCreador, listUsuarios);
+        chats.add(chatGrupo);
 
-
-
-        return 0;
+        return chatGrupo;
     }
+
 
     public ArrayList<Usuario> getUsuarios(){
         return new ArrayList<>(usuarios);
