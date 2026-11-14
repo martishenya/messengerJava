@@ -21,63 +21,66 @@ public class MenuChat {
 
     public void crearChatPrivado(){
 
-
-        char opc;
         int check;
-        String username;
+        int opcUsuario;
         Usuario usuario;
+        ArrayList<Usuario> listaUsuarios;
 
 //        limpiarConsola();
-        System.out.println("Elige la persona con quien quires empezar a chatear y introduce su username:");
+        System.out.println("Elige la persona con quien quieres empezar a chatear y introduce el numero correspondiente:");
 
-        mostrarListaUsuarios();
+        listaUsuarios = mostrarAndGetListaUsuarios();
+
+        if(listaUsuarios.isEmpty()){
+            System.out.println("No hay usuarios en el sistema");
+            return;
+        }
 
 
         do{
 
-            username = sc.nextLine();
-            usuario = mensajeria.buscarUsuario(username);
+            opcUsuario = sc.nextInt();
+            sc.nextLine();
 
-            if(usuario == null){
+            if(opcUsuario < 1 || opcUsuario > listaUsuarios.size()){
 
-                System.out.println("El username introducido no existe en el sistema");
-                System.out.println("Probar otra vez?[y/n] ");
+                System.out.println("El valor introducido no es valido, elige otra vez! ");
 
-                opc = sc.next().charAt(0);
-                sc.nextLine();
 
-                if(opc != 'y'){
+            }else {
 
+                usuario = listaUsuarios.get(opcUsuario - 1);
+                check = mensajeria.crearChatPrivado(sesion.getUsuarioActivo(), usuario);
+                break;
+            }
+
+            }while(true);
+
+
+                Chat chat = mensajeria.buscarChatPrivado(sesion.getUsuarioActivo(), usuario);
+                if(check == -4){
+                    System.out.println("Ya tienes el chat con esta persona, te trasladamos al chat..");
+//                pararProg();
+                    abrirChat(chat);
                     return;
                 }
 
-                continue;
-            }
-
-            check = mensajeria.crearChatPrivado(sesion.getUsuarioActivo(), usuario);
-
-
-            if(check == -3){
-
-                System.out.println("Para comunicarte contigo mismo no necesitas una mensajeria :)");
-//                pararProg();
-                return;
-
-            }
-
-            Chat chat = mensajeria.buscarChatPrivado(sesion.getUsuarioActivo(), usuario);
-            if(check == -4){
-                System.out.println("Ya tienes el chat con esta persona, te trasladamos al chat..");
-//                pararProg();
                 abrirChat(chat);
-                return;
-            }
+
+    }
+
+    public void crearChatGrupo(){
+
+        String nombre;
 
 
-            abrirChat(chat);
-            return;
+        System.out.println("Introduce el nombre para el grupo nuevo:");
+        nombre = sc.nextLine();
 
-        }while(true);
+
+
+//        mostrarListaUsuarios();
+
     }
 
     public void misChats(){
@@ -227,22 +230,21 @@ public class MenuChat {
     }
 
 
-    private void mostrarListaUsuarios(){
+    private ArrayList<Usuario> mostrarAndGetListaUsuarios(){
         ArrayList<Usuario> usuarios = mensajeria.getUsuarios();
         Usuario usuarioActivo = sesion.getUsuarioActivo();
 
+        usuarios.remove(usuarioActivo);
+
+        int i = 0;
 
         for(Usuario u : usuarios){
 
-            if(u.equals(usuarioActivo)){
-
-                continue;
-
-            }
-
-            System.out.printf("%s (%s %s)%n", u.getUsername(), u.getNombre(), u.getApellido());
+            i++;
+            System.out.printf("%d. %s (%s %s)%n", i, u.getUsername(), u.getNombre(), u.getApellido());
 
         }
 
+        return usuarios;
     }
 }

@@ -117,6 +117,14 @@ public class GestorMensajeria {
 
     }
 
+    public int crearChatGrupo(ArrayList<Usuario> listUsuarios){
+
+
+
+
+        return 0;
+    }
+
     public ArrayList<Usuario> getUsuarios(){
         return new ArrayList<>(usuarios);
 
