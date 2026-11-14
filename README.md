@@ -41,9 +41,9 @@ Hemos elegido este proyecto en primer lugar por su flexibilidad, ya que una apli
 
 ### Chats y grupos
 
-  - [x] Crear chat para dos usuarios
+- [x] Crear chat para dos usuarios
 
-  - [ ] Crear grupo
+- [x] Crear grupo
 
 - [ ] Eliminar chat o grupo
 
