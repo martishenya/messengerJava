@@ -109,6 +109,8 @@ public class MenuChat {
                 Usuario usuario = usuariosDisponibles.remove(opcUsuario - 1);
                 usuariosAAnadir.add(usuario);
 
+                i++;
+
                 System.out.println("Seguir anadiendo?[y/n] ");
 
                 char opc = sc.next().charAt(0);
@@ -122,13 +124,16 @@ public class MenuChat {
 
             }
 
-            i++;
+
 
         }while(true);
 
         Chat chat = mensajeria.crearChatGrupo(nombre, usuariosAAnadir, usuarioActivo);
         abrirChat(chat);
     }
+
+
+
 
     public void misChats(){
 
