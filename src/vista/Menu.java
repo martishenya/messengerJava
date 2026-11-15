@@ -63,7 +63,7 @@ public class Menu {
                         break;
                     case 0:
                         System.out.println("Hasta luego!!");
-                        System.out.println("Hasta luego!!");
+
                         return;
                     default:
                         System.out.println("El valor introducido no es valido, prueba otra vez!");
