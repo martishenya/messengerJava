@@ -88,12 +88,18 @@ public class MenuChat {
 
         usuariosDisponibles.remove(usuarioActivo);
 
+        if(usuariosDisponibles.isEmpty()){
+            System.out.println("No hay usuarios disponibles para crear un grupo");
+            return;
+        }
+
         System.out.println("Introduce el nombre para el grupo nuevo:");
         nombre = sc.nextLine();
 
 
 
         do{
+
             System.out.printf("Elige la persona num: %d para anadir al grupo y introduce el numero correspondiente:%n", i);
             mostrarListaUsuarios(usuariosDisponibles);
 
@@ -110,6 +116,12 @@ public class MenuChat {
                 usuariosAAnadir.add(usuario);
 
                 i++;
+
+                if(usuariosDisponibles.isEmpty()){
+
+                    System.out.println("No tienes usuarios mas para anadir, por eso se crea el grupo ya");
+                    break;
+                }
 
                 System.out.println("Seguir anadiendo?[y/n] ");
 
@@ -187,7 +199,7 @@ public class MenuChat {
 
             System.out.println("Elige la accion:");
             System.out.println("1. Enviar mensaje");
-            System.out.println("2. Volver al menu principal");
+            System.out.println("0. Volver al menu principal");
 //        luego aqui anadimos editar/borrar/etc..
 
             opc = sc.nextInt();
@@ -200,7 +212,7 @@ public class MenuChat {
                     mostrarListaMensajes(chat);
                     enviarMensaje(chat);
                     break;
-                case 2:
+                case 0:
 
                     return;
                 default:
@@ -254,7 +266,7 @@ public class MenuChat {
     }
 
 
-    private void mostrarListaChats(ArrayList<Chat> chatsUsuario){
+    public void mostrarListaChats(ArrayList<Chat> chatsUsuario){
 
         Usuario usuarioActual = sesion.getUsuarioActivo();
 

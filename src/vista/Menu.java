@@ -236,7 +236,8 @@ public class Menu {
 
         System.out.println("Elige la accion:");
         System.out.println("1. Eliminar el perfil actual");
-        System.out.println("2. Cambiar la contrasena");
+        System.out.println("2. Eliminar un chat o un grupo(creado por ti mismo)");
+        System.out.println("3. Cambiar la contrasena");
 //        System.out.println("0. Volver");
 
         opc = sc.nextInt();
@@ -250,6 +251,11 @@ public class Menu {
                 break;
 
             case 2:
+
+                eliminarChat();
+                break;
+
+            case 3:
                 String contrasenaAct, contrasenaNuev;
                 int check;
 
@@ -272,12 +278,41 @@ public class Menu {
 
                 }
 
-
             default:
 
-
-
         }
+    }
+
+    private void eliminarChat(){
+
+        ArrayList<Chat> chats = mensajeria.buscarChatsPorUsuario(sesion.getUsuarioActivo(), true);
+        int opc;
+
+        if(chats.isEmpty()){
+            System.out.println("No tienes chats o grupos que puedas eliminar");
+            return;
+        }
+
+        System.out.println("Elige el chat que quieres eliminar y introduce el numero correspondiente:");
+        menuChat.mostrarListaChats(chats);
+
+        do{
+
+            opc = sc.nextInt();
+            sc.nextLine();
+
+            if(opc >= 1 && opc <= chats.size()){
+
+                Chat chat = chats.get(opc - 1);
+                mensajeria.eliminarChat(chat);
+
+                return;
+            }
+
+            System.out.println("El valor introducido no es valido, prueba otra vez!");
+
+
+        }while(true);
 
 
 

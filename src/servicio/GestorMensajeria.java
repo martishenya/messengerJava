@@ -94,6 +94,14 @@ public class GestorMensajeria {
 
     }
 
+    public int eliminarChat(Chat chat){
+
+
+        chats.remove(chat);
+        return 0;
+
+    }
+
 
     public int crearChatPrivado(Usuario usuario1, Usuario usuario2){
 
@@ -133,7 +141,14 @@ public class GestorMensajeria {
     }
 
 
+    // usamos sobrecarga para no tener que modificar el código existente
     public ArrayList<Chat> buscarChatsPorUsuario(Usuario usuario){
+
+        return buscarChatsPorUsuario(usuario, false);
+    }
+
+
+    public ArrayList<Chat> buscarChatsPorUsuario(Usuario usuario, boolean adminGrupo){
 
         ArrayList<Chat> chatsUsuario = new ArrayList<>();
 
@@ -141,10 +156,19 @@ public class GestorMensajeria {
 
             if(c.contieneUsuario(usuario)){
 
-                chatsUsuario.add(c);
+                if(adminGrupo && c instanceof ChatGrupo){
+
+                    if(!((ChatGrupo) c).getUsuarioCreador().equals(usuario)){
+
+                        continue;
+
+                    }
+
+                }
+
+                    chatsUsuario.add(c);
 
             }
-
         }
 
         return chatsUsuario;
@@ -182,5 +206,8 @@ public class GestorMensajeria {
         chat.anadirMensaje(mensaje);
 
     }
+
+
+
 
 }

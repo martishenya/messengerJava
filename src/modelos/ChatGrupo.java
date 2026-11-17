@@ -37,4 +37,8 @@ public class ChatGrupo extends Chat{
     public String getNombre() {
         return nombre;
     }
+
+    public Usuario getUsuarioCreador() {
+        return usuarioCreador;
+    }
 }
