@@ -45,7 +45,7 @@ Hemos elegido este proyecto en primer lugar por su flexibilidad, ya que una apli
 
 - [x] Crear grupo
 
-- [ ] Eliminar chat o grupo
+- [x] Eliminar chat o grupo
 
 - [ ] Añadir usuarios a un grupo
 
