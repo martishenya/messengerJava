@@ -67,11 +67,9 @@ Hemos elegido este proyecto en primer lugar por su flexibilidad, ya que una apli
 
 - [ ] Responder a mensajes
 
-- [ ] Filtrar mensajes por usuario
+- [ ] Buscar mensajes filtrados(por usuario, fecha, texto)
 
-- [ ] Filtrar mensajes por fecha
-
-<img width="1507" height="626" alt="mensajeriaDiagrama (1)" src="https://github.com/user-attachments/assets/5c8006b4-918c-41b3-bd4b-042977d85664" />
+<img alt="mensajeriaDiagrama" src="./mensajeriaDiagrama.drawio.png" />
 
 
 
